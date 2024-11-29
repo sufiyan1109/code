@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nutrition Tracker | FitQuest</title>
+    <link rel="stylesheet" href="nutrition.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Nutrition Tracker</h1>
+        <p>Track your meals and macros effortlessly!</p>
+    </header>
+
+    <main class="main-content">
+        <!-- Meal Tracker Form Section -->
+        <section class="tracker-section">
+            <div class="card tracker-card">
+                <h2>Select Your Meal</h2>
+                <form id="nutritionForm">
+                    <select id="mealType">
+                        <option value="Breakfast">Breakfast</option>
+                        <option value="Lunch">Lunch</option>
+                        <option value="Dinner">Dinner</option>
+                    </select>
+                    <div id="foodItems" class="food-items">
+                        <!-- Food items will dynamically appear here -->
+                    </div>
+                    <button type="submit" class="btn">Add Meal</button>
+                </form>
+            </div>
+            
+            <!-- Daily Summary Section -->
+            <div class="card summary-card">
+                <h2>Daily Summary</h2>
+                <div class="summary">
+                    <p><strong>Total Calories:</strong> <span id="totalCalories">0</span> kcal</p>
+                    <p><strong>Total Protein:</strong> <span id="totalProtein">0</span> g</p>
+                    <p><strong>Total Carbs:</strong> <span id="totalCarbs">0</span> g</p>
+                    <p><strong>Total Fats:</strong> <span id="totalFats">0</span> g</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Logged Meals Section -->
+        <section class="meal-list-section">
+            <h2>Logged Meals</h2>
+            <ul id="mealList" class="meal-list">
+                <li class="placeholder">No meals logged yet.</li>
+            </ul>
+        </section>
+    </main>
+
+    <script src="nutrition.js"></script>
+</body>
+</html>

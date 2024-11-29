@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FIT QUEST - Activity Tracking</title>
+  <link rel="stylesheet" href="Activity tracking.css">
+</head>
+<body>
+  <div class="activity-container">
+    <!-- Background Overlay -->
+    <div class="background-overlay"></div>
+
+    <!-- Header -->
+    <header>
+      <h1>Activity Tracker</h1>
+      <p>Your personalized portal to monitor and optimize your fitness activities.</p>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+      <!-- Log Activity Section -->
+      <section class="activity-log">
+        <h2>Log Activity</h2>
+        <form id="activityForm">
+          <div class="form-field">
+            
+            <label for="activitySelect">Activity Name:</label>
+            <select id="activitySelect" required>
+              <option class="option" value="" style="color: white; background-color: black;">Select an activity</option>
+              <option class="option" value="Running" style="color: white; background-color: black;">Running</option>
+              <option class="option" value="Cycling" style="color: white; background-color: black;">Cycling</option>
+              <option class="option" value="Swimming" style="color: white; background-color: black;">Swimming</option>
+              <option class="option" value="Yoga" style="color: white; background-color: black;">Yoga</option>
+              <option class="option" value="Weightlifting" style="color: white; background-color: black;">Weightlifting</option>
+            </select>
+        </div>
+          <div class="form-field">
+            <label for="duration">Duration (minutes):</label>
+            <input type="number" id="duration" placeholder="E.g., 30" required>
+          </div>
+          <div class="form-field">
+  <label for="caloriesBurned">Calories Burned:</label>
+  <input type="number" id="caloriesBurned" readonly>
+</div>
+          <button type="submit" class="btn">Add Activity</button>
+        </form>
+      </section>
+
+      <!-- Activity Summary Section -->
+      <section class="activity-summary">
+        <h2>Today's Activities</h2>
+        <div class="summary-content">
+          <div class="summary-card">
+            <p>Total Duration</p>
+            <h3 id="totalDuration">0</h3>
+            <span>Minutes</span>
+          </div>
+          <div class="summary-card">
+            <p>Total Calories Burned</p>
+            <h3 id="totalCalories">0</h3>
+            <span>Kcal</span>
+          </div>
+        </div>
+
+        <table class="activity-table" id="activityTable">
+          <thead>
+            <tr>
+              <th>Activity</th>
+              <th>Duration (min)</th>
+              <th>Calories</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Dynamic Rows -->
+          </tbody>
+        </table>
+      </section>
+    </main>
+  </div>
+  <script src="Activity tracking.js"></script>
+
+<script>
+  const activityCalorieRates = {
+    Running: 10,
+    Cycling: 7,
+    Swimming: 8,
+    Yoga: 3,
+    Weightlifting: 8
+  };
+
+  const activityForm = document.getElementById("activityForm");
+  const activitySelect = document.getElementById("activitySelect");
+  const durationInput = document.getElementById("duration");
+  const caloriesBurnedInput = document.getElementById("caloriesBurned");
+
+  activityForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const selectedActivity = activitySelect.value;
+    const duration = parseInt(durationInput.value);
+
+    const caloriesBurned = duration * activityCalorieRates[selectedActivity];
+    caloriesBurnedInput.value = caloriesBurned;
+
+    // ... (rest of your form submission logic)
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FIT QUEST - Progress Tracker</title>
+  <link rel="stylesheet" href="progress.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Chart.js -->
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>FIT QUEST - Progress Tracker</h1>
+    </header>
+    <main>
+      <!-- Weekly Summary Section -->
+      <section class="summary">
+        <h2>Weekly Summary</h2>
+        <div class="stats">
+          <div class="stat-card">
+            <h3>Calories Burned</h3>
+            <p>3500 kcal</p>
+          </div>
+          <div class="stat-card">
+            <h3>Workouts Completed</h3>
+            <p>5 Sessions</p>
+          </div>
+          <div class="stat-card">
+            <h3>Hydration</h3>
+            <p>21L / 28L</p>
+          </div>
+          <div class="stat-card">
+            <h3>Goal Progress</h3>
+            <p>75% Completed</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Graphs Section -->
+      <section class="graphs">
+        <h2>Activity Trends</h2>
+        <canvas id="activity-chart"></canvas>
+      </section>
+
+      <!-- Achievements Section -->
+      <section class="achievements">
+        <h2>Achievements</h2>
+        <div class="badges">
+          <div class="badge">
+            <h3>🔥 Streak</h3>
+            <p>7-Day Activity Streak</p>
+          </div>
+          <div class="badge">
+            <h3>💧 Hydration Pro</h3>
+            <p>100% Water Goal</p>
+          </div>
+          <div class="badge">
+            <h3>🏃‍♂ Runner</h3>
+            <p>5 Miles in a Day</p>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="progress.js"></script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+:root {
+	--bg-color: #000;
+	--snd-bg-color: #111;
+	--text-color: #fff;
+	--main-color: #45ffca;
+  }
+  
+  body, html {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	font-family: Arial, sans-serif;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+  }
+  
+  .background {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: url('assests/background.jpg') no-repeat center center/cover;
+	z-index: -1;
+	filter: brightness(0.5);
+  }
+  
+  .container {
+	background: var(--snd-bg-color);
+	padding: 30px;
+	border-radius: 10px;
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
+	width: 100%;
+	max-width: 400px;
+	text-align: center;
+  }
+  
+  h2 {
+	margin-bottom: 20px;
+	color: var(--text-color);
+  }
+  
+  input {
+	display: block;
+	width: 100%;
+	padding: 12px;
+	margin: 12px 0;
+	border: 1px solid var(--main-color);
+	border-radius: 4px;
+	background-color: var(--bg-color);
+	color: var(--text-color);
+	font-size: 14px;
+  }
+  
+  input::placeholder {
+	color: #aaa;
+  }
+  
+  button {
+	padding: 12px;
+	width: 100%;
+	background-color: var(--main-color);
+	color: var(--bg-color);
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	font-weight: bold;
+	margin-top: 10px;
+  }
+  
+  button:hover {
+	background-color: #36ccaa;
+  }
+  
+  #form-toggle {
+	display: flex;
+	justify-content: center;
+	margin-bottom: 20px;
+  }
+  
+  #form-toggle button {
+	flex: 1;
+	padding: 12px;
+	border: none;
+	background-color: var(--snd-bg-color);
+	color: var(--text-color);
+	cursor: pointer;
+	font-weight: bold;
+	border-bottom: 2px solid transparent;
+  }
+  
+  #form-toggle .active {
+	background-color: var(--main-color);
+	color: var(--bg-color);
+	border-bottom: 2px solid var(--main-color);
+  }
+  
+  #form-toggle button:not(.active):hover {
+	background-color: #333;
+  }
+  

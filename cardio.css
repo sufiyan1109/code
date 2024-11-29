@@ -1,0 +1,215 @@
+:root {
+    --bg-color: #000;
+    --snd-bg-color: #111;
+    --text-color: #fff;
+    --main-color: #45ffca;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  header h1 {
+    text-align: center;
+    color: var(--main-color);
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  main {
+    background-color: var(--snd-bg-color);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 15px rgba(69, 255, 202, 0.3);
+  }
+  
+  .tracker {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .date-picker,
+  .day-picker,
+  .add-activity,
+  .progress,
+  .graph {
+    background-color: var(--bg-color);
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(69, 255, 202, 0.2);
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  input,
+  select,
+  button {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 2px solid var(--main-color);
+    border-radius: 5px;
+    background-color: var(--snd-bg-color);
+    color: var(--text-color);
+    font-size: 1rem;
+  }
+  
+  button {
+    background-color: var(--main-color);
+    color: var(--bg-color);
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  button:hover {
+    background-color: #3ddbaf;
+  }
+  
+  .activity-log ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .activity-log ul li {
+    background-color: var(--bg-color);
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 0 8px rgba(69, 255, 202, 0.2);
+  }
+  
+  .progress-bar {
+    width: 100%;
+    background-color: var(--snd-bg-color);
+    height: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 10px;
+  }
+  
+  .progress-fill {
+    width: 0;
+    height: 100%;
+    background-color: var(--main-color);
+    transition: width 0.3s ease-in-out;
+  }
+  
+  #progress-text {
+    font-size: 0.9rem;
+    text-align: center;
+  }
+  
+  .graph canvas {
+    width: 100%;
+    max-height: 300px;
+  }
+  
+  /* MEDIA QUERIES */
+  
+  /* Small Devices (Mobile, max-width: 576px) */
+  @media (max-width: 576px) {
+    body {
+      font-size: 14px;
+    }
+  
+    header h1 {
+      font-size: 1.5rem;
+    }
+  
+    .container {
+      padding: 10px;
+    }
+  
+    main {
+      padding: 15px;
+    }
+  
+    input,
+    select,
+    button {
+      font-size: 0.9rem;
+      padding: 8px;
+    }
+  
+    .progress-bar {
+      height: 15px;
+    }
+  
+    #progress-text {
+      font-size: 0.8rem;
+    }
+  }
+  
+  /* Medium Devices (Tablets, max-width: 768px) */
+  @media (max-width: 768px) {
+    .container {
+      padding: 15px;
+    }
+  
+    header h1 {
+      font-size: 1.8rem;
+    }
+  
+    input,
+    select,
+    button {
+      font-size: 1rem;
+      padding: 10px;
+    }
+  
+    .progress-bar {
+      height: 18px;
+    }
+  
+    #progress-text {
+      font-size: 0.85rem;
+    }
+  }
+  
+  /* Large Devices (Desktops, max-width: 1200px) */
+  @media (max-width: 1200px) {
+    .container {
+      padding: 20px;
+    }
+  
+    header h1 {
+      font-size: 2rem;
+    }
+  
+    input,
+    select,
+    button {
+      font-size: 1rem;
+    }
+  
+    .progress-bar {
+      height: 20px;
+    }
+  
+    #progress-text {
+      font-size: 0.9rem;
+    }
+  }
+  

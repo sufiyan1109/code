@@ -1,0 +1,194 @@
+:root {
+  --bg-color: #000;
+  --snd-bg-color: #111;
+  --text-color: #fff;
+  --main-color: #45ffca;
+  --glow-color: rgba(69, 255, 202, 0.5);
+  --card-bg: #1a1a1a;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #000, #111);
+  color: var(--text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+.explore{
+  text-decoration: underline;
+  color: orange;
+  font-size: 20px;
+}
+.explore:hover{
+  color: white;
+}
+.dashboard {
+  text-align: center;
+  width: 95%;
+  max-width: 1200px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.dashboard-title {
+  font-size: 3rem;
+  margin-bottom: 30px;
+  color: var(--main-color);
+  text-shadow: 0 0 20px var(--glow-color), 0 0 40px var(--main-color);
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  padding: 0 20px;
+}
+
+.feature {
+  background: var(--card-bg);
+  border-radius: 15px;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+  text-align: center;
+  color: var(--text-color);
+  transition: transform 0.5s, box-shadow 0.5s;
+  cursor: pointer;
+}
+
+.feature h2 {
+  font-size: 1.5rem;
+  color: var(--main-color);
+  margin-bottom: 10px;
+}
+
+.feature p {
+  font-size: 1rem;
+  color: #ccc;
+}
+
+.feature::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, var(--glow-color) 0%, transparent 60%);
+  transform: rotate(45deg);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s;
+}
+
+.feature.free:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px var(--main-color);
+}
+
+.feature.free:hover::before {
+  opacity: 1;
+}
+
+.feature.locked {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.feature.locked button {
+  background-color: var(--main-color);
+  color: var(--text-color);
+  border: none;
+  padding: 8px 15px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.feature.locked:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+
+.feature.active-glow {
+  animation: click-glow 0.5s forwards;
+}
+
+@keyframes click-glow {
+  0% {
+      box-shadow: 0 0 20px var(--main-color);
+  }
+  100% {
+      box-shadow: 0 0 40px var(--main-color), 0 0 60px var(--main-color);
+      transform: scale(1.05);
+  }
+}
+
+
+.feature.pro-unlocked {
+  animation: unlock-glow 1s forwards;
+}
+
+@keyframes unlock-glow {
+  0% {
+      opacity: 0.5;
+      transform: scale(0.9);
+  }
+  100% {
+      opacity: 1;
+      transform: scale(1);
+      box-shadow: 0 0 30px var(--main-color);
+  }
+}
+
+
+.pro-tag {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: var(--main-color);
+  color: var(--text-color);
+  padding: 5px 10px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  border-radius: 8px;
+}
+
+
+.feature.locked {
+  filter: blur(4px);
+  position: relative;
+  pointer-events: none;
+  opacity: 0.8;
+}
+
+.feature.locked button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--main-color);
+  color: var(--text-color);
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 8px;
+  pointer-events: all;
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+}
+}

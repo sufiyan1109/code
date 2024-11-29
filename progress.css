@@ -1,0 +1,178 @@
+:root {
+    --bg-color: #000;
+    --snd-bg-color: #111;
+    --text-color: #fff;
+    --main-color: #45ffca;
+  }
+  
+  body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+  }
+  
+  .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  header h1 {
+    text-align: center;
+    color: var(--main-color);
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  main {
+    background-color: var(--snd-bg-color);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 15px rgba(69, 255, 202, 0.3);
+  }
+  
+  .summary, .graphs, .achievements {
+    margin-bottom: 30px;
+  }
+  
+  h2 {
+    margin-bottom: 20px;
+    color: var(--main-color);
+  }
+  
+  .stats {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .stat-card {
+    background-color: var(--bg-color);
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(69, 255, 202, 0.3);
+    flex: 1 1 200px;
+  }
+  
+  .stat-card h3 {
+    color: var(--main-color);
+  }
+  
+  .badges {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .badge {
+    background-color: var(--bg-color);
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    flex: 1 1 200px; /* Corrected flex syntax */
+    box-shadow: 0 0 10px rgba(69, 255, 202, 0.3);
+  }
+  
+  .badge h3 {
+    color: var(--main-color);
+  }
+  
+  canvas {
+    max-width: 100%;
+    background-color: var(--bg-color);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(69, 255, 202, 0.3);
+  }
+  
+  /* MEDIA QUERIES */
+  
+  /* Small Devices (Mobile, max-width: 576px) */
+  @media (max-width: 576px) {
+    body {
+      font-size: 14px;
+    }
+  
+    header h1 {
+      font-size: 1.8rem;
+    }
+  
+    main {
+      padding: 15px;
+    }
+  
+    .stats {
+      flex-direction: column;
+    }
+  
+    .stat-card {
+      margin-bottom: 10px;
+    }
+  
+    .badges {
+      flex-direction: column;
+    }
+  
+    .badge {
+      margin-bottom: 10px;
+    }
+  
+    canvas {
+      padding: 5px;
+    }
+  }
+  
+  /* Medium Devices (Tablets, max-width: 768px) */
+  @media (max-width: 768px) {
+    header h1 {
+      font-size: 2rem;
+    }
+  
+    main {
+      padding: 20px;
+    }
+  
+    .stats {
+      gap: 15px;
+    }
+  
+    .stat-card {
+      flex: 1 1 150px;
+      padding: 15px;
+    }
+  
+    .badges {
+      gap: 15px;
+    }
+  
+    .badge {
+      flex: 1 1 150px;
+      padding: 10px;
+    }
+  }
+  
+  /* Large Devices (Desktops, max-width: 1200px) */
+  @media (max-width: 1200px) {
+    header h1 {
+      font-size: 2.2rem;
+    }
+  
+    .stats {
+      gap: 20px;
+    }
+  
+    .stat-card {
+      flex: 1 1 200px;
+    }
+  
+    .badges {
+      gap: 20px;
+    }
+  
+    .badge {
+      flex: 1 1 200px; /* Fixed flex syntax */
+    }
+  }
+  

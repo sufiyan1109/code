@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FIT QUEST - Cardio Tracker</title>
+  <link rel="stylesheet" href="cardio.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> 
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>FIT QUEST - Cardio Tracker</h1>
+    </header>
+    <main>
+      <section class="tracker">
+        <div class="day-picker">
+          <label for="day">Select Day:</label>
+          <select id="day">
+            <option value="Sunday">Sunday</option>
+            <option value="Monday">Monday</option>
+            <option value="Tuesday">Tuesday</option>
+            <option value="Wednesday">Wednesday</option>
+            <option value="Thursday">Thursday</option>
+            <option value="Friday">Friday</option>
+            <option value="Saturday">Saturday</option>
+          </select>
+        </div>
+        <div class="date-picker">
+          <label for="date">Select Date:</label>
+          <input type="date" id="date">
+        </div>
+
+        <div class="progress">
+          <h2>Daily Progress</h2>
+          <div class="progress-bar">
+            <div class="progress-fill" id="progress-fill"></div>
+          </div>
+          <p id="progress-text">0 / 120 mins (Goal)</p>
+        </div>
+
+        <div class="activity-log">
+          <h2>Activity Log</h2>
+          <ul id="log-list">
+            <!-- Logs will be dynamically populated here -->
+          </ul>
+        </div>
+
+        <div class="add-activity">
+          <h2>Add Activity</h2>
+          <form id="activity-form">
+            <label for="activity">Activity:</label>
+            <input type="text" id="activity" placeholder="E.g., Running" required>
+            <label for="duration">Duration (min):</label>
+            <input type="number" id="duration" placeholder="E.g., 30" required>
+            <button type="submit">Add</button>
+          </form>
+        </div>
+
+        <div class="graph">
+          <h2>Weekly Progress</h2>
+          <canvas id="progress-chart"></canvas>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="cardio.js"></script>
+</body>
+</html>

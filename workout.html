@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customizable Workout Plan</title>
+    <link rel="stylesheet" href="workout.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <header>
+            <h1>Customizable Workout Plan</h1>
+        </header>
+
+        <!-- Plan Creation Form -->
+        <section class="form-section">
+            <h2>Create Your Plan</h2>
+            <form id="workout-form">
+                <label for="goal">Goal:</label>
+                <select id="goal" required>
+                    <option value="weight_loss">Weight Loss</option>
+                    <option value="muscle_gain">Muscle Gain</option>
+                    <option value="endurance">Endurance</option>
+                </select>
+
+                <label for="fitness-level">Fitness Level:</label>
+                <select id="fitness-level" required>
+                    <option value="beginner">Beginner</option>
+                    <option value="intermediate">Intermediate</option>
+                    <option value="advanced">Advanced</option>
+                </select>
+
+                <label for="duration">Workout Duration (minutes):</label>
+                <input type="number" id="duration" min="10" max="180" required>
+
+                <label for="days-per-week">Days per Week:</label>
+                <input type="number" id="days-per-week" min="1" max="7" required>
+
+                <label for="intensity">Intensity Level:</label>
+                <select id="intensity" required>
+                    <option value="easy">Easy</option>
+                    <option value="moderate">Moderate</option>
+                    <option value="hard">Hard</option>
+                </select>
+
+                <button type="submit" class="btn">Create Plan</button>
+            </form>
+        </section>
+
+        <!-- Exercise Library -->
+        <section class="exercise-library">
+            <h2>Exercise Library</h2>
+            <div id="exercise-list">
+                <div class="exercise-item" data-name="Push-up" data-type="Strength">Push-up</div>
+                <div class="exercise-item" data-name="Squat" data-type="Strength">Squat</div>
+                <div class="exercise-item" data-name="Running" data-type="Cardio">Running</div>
+                <div class="exercise-item" data-name="Plank" data-type="Strength">Plank</div>
+                <div class="exercise-item" data-name="Jumping Jacks" data-type="Cardio">Jumping Jacks</div>
+                <div class="exercise-item" data-name="Yoga Pose" data-type="Yoga">Yoga Pose</div>
+            </div>
+        </section>
+
+        <!-- Weekly Schedule -->
+        <section class="weekly-schedule">
+            <h2>Weekly Schedule</h2>
+            <div id="weekly-plan">
+                <!-- Dynamic plan will be inserted here -->
+            </div>
+        </section>
+
+    </div>
+
+    <script src="worlout.js"></script>
+</body>
+</html>
