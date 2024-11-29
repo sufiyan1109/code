@@ -7,34 +7,41 @@
     <link rel="stylesheet" href="dashboard.css">
 </head>
 <body>
+    <div class="top-bar">
+        <!-- Profile Section -->
+        <div class="profile-icon" onclick="toggleProfileDetails()">
+            <img src="assests/user.png" alt="Profile Icon" id="profile-icon">
+            <div class="profile-details" id="profile-details">
+                <p id="profile-username">Name: Guest</p>
+                <p id="profile-email">Email: guest@example.com</p>
+            </div>
+        </div>
+        <!-- Go Home Button -->
+        <button class="go-home" onclick="redirectToHome()">Go Home</button>
+    </div>
+
     <div class="dashboard">
         <h1 class="dashboard-title">FitQuest Dashboard</h1>
         <div class="features">
-            
             <div class="feature free" onclick="openTab('activity-tracking.html')">
                 <h2>Activity Tracking</h2>
                 <p>Track your daily activities and stay active.</p>
-                <a class="explore" href="activity.html">Let's Begin!</a>
-
+                <a class="explore" href="Activity tracking.html">Let's Begin!</a>
             </div>
             <div class="feature free" onclick="openTab('cardio-progress.html')">
                 <h2>Cardio Tracking</h2>
                 <p>Monitor your cardio progress effectively.</p>
                 <a class="explore" href="cardio.html">Let's Begin!</a>
-
             </div>
             <div class="feature free" onclick="openTab('progress-tracking.html')">
                 <h2>Progress Tracking</h2>
                 <p>Analyze and review your fitness journey.</p>
                 <a class="explore" href="progress.html">Let's Begin!</a>
-
             </div>
-
             <div class="feature locked">
                 <h2>Customizable Workout Plans</h2>
                 <p>Create plans tailored to your needs.</p>
-                <a class="explore" href="custWorkout.html">Let's Begin!</a>
-
+                <a class="explore" href="workout.html">Let's Begin!</a>
                 <span class="pro-tag">Pro</span>
                 <button onclick="redirectToPro()">Go Pro</button>
             </div>
@@ -42,7 +49,6 @@
                 <h2>Hydration Tracking</h2>
                 <p>Stay hydrated and healthy every day.</p>
                 <a class="explore" href="hydration.html">Let's Begin!</a>
-
                 <span class="pro-tag">Pro</span>
                 <button onclick="redirectToPro()">Go Pro</button>
             </div>
@@ -50,7 +56,6 @@
                 <h2>Nutrition Tracking</h2>
                 <p>Keep track of your nutrition intake.</p>
                 <a class="explore" href="nutrition.html">Let's Begin!</a>
-
                 <span class="pro-tag">Pro</span>
                 <button onclick="redirectToPro()">Go Pro</button>
             </div>
